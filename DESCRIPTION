@@ -1,7 +1,9 @@
 Package: ceterisParibus
 Title: Ceteris Paribus Profiles
-Version: 0.3.0
-Authors@R: person("Przemyslaw", "Biecek", email = "przemyslaw.biecek@gmail.com", role = c("aut", "cre"))
+Version: 0.3.1
+Authors@R: person("Przemyslaw", "Biecek", email = "przemyslaw.biecek@gmail.com", 
+    role = c("aut", "cre"),
+    comment = c(ORCID = "0000-0001-8423-1823"))
 Description: Ceteris Paribus Profiles (What-If Plots) are designed to present model 
     responses around selected points in a feature space. 
     For example around a single prediction for an interesting observation. 
@@ -17,10 +19,10 @@ LazyData: true
 VignetteBuilder: knitr
 URL: https://pbiecek.github.io/ceterisParibus/
 BugReports: https://github.com/pbiecek/ceterisParibus/issues
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.1
 NeedsCompilation: no
-Packaged: 2018-08-11 08:35:19 UTC; pbiecek
-Author: Przemyslaw Biecek [aut, cre]
+Packaged: 2019-01-29 18:41:13 UTC; pbiecek
+Author: Przemyslaw Biecek [aut, cre] (<https://orcid.org/0000-0001-8423-1823>)
 Maintainer: Przemyslaw Biecek <przemyslaw.biecek@gmail.com>
 Repository: CRAN
-Date/Publication: 2018-08-11 15:10:08 UTC
+Date/Publication: 2019-01-29 23:20:08 UTC

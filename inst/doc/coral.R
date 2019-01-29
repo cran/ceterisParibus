@@ -19,13 +19,13 @@ explainer_lm <- explain(apartments_lm_model,
 new_apartment <- apartmentsTest[1, ]
 new_apartment
 
-## ---- fig.width=7, fig.height=7------------------------------------------
+## ---- fig.width=7, fig.height=6------------------------------------------
 cr_rf <- local_fit(explainer_rf, observation = new_apartment, 
                    select_points = 0.002, selected_variable = "surface")
 plot(cr_rf, plot_residuals = FALSE)
 plot(cr_rf)
 
-## ---- fig.width=7, fig.height=7------------------------------------------
+## ---- fig.width=7, fig.height=6------------------------------------------
 new_apartment <- apartmentsTest[10, ]
 cr_rf <- local_fit(explainer_rf, observation = new_apartment, 
                    select_points = 0.002, selected_variable = "surface")
@@ -40,7 +40,7 @@ cr_rf <- local_fit(explainer_rf, observation = new_apartment,
                    select_points = 0.002, selected_variable = "surface")
 plot(cr_rf)
 
-## ---- fig.width=7, fig.height=7------------------------------------------
+## ---- fig.width=7, fig.height=6------------------------------------------
 cr_rf <- local_fit(explainer_rf, observation = new_apartment, 
                    select_points = 0.002, selected_variable = "surface")
 plot(cr_rf, plot_residuals = FALSE, palette = "wangkardu")

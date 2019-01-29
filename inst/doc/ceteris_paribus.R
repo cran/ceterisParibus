@@ -16,14 +16,14 @@ explainer_rf <- explain(apartments_rf_model,
                         data = apartmentsTest[,2:6], 
                         y = apartmentsTest$m2.price)
 
-## ---- warning=FALSE, message=FALSE---------------------------------------
+## ---- fig.width=7, fig.height=6, warning=FALSE, message=FALSE------------
 apartments_A <- apartmentsTest[958,]
 cp_rf_A <- ceteris_paribus(explainer_rf, apartments_A, y = apartments_A$m2.price)
 
 plot(cp_rf_A, show_profiles = TRUE, show_observations = TRUE, 
      selected_variables = c("surface","construction.year"))
 
-## ---- warning=FALSE, message=FALSE---------------------------------------
+## ---- fig.width=7, fig.height=6, warning=FALSE, message=FALSE------------
 apartments_B <- select_neighbours(apartmentsTest, apartmentsTest[958,], n = 15)
 cp_rf_B <- ceteris_paribus(explainer_rf, apartments_B, y = apartments_B$m2.price)
 
@@ -31,7 +31,7 @@ plot(cp_rf_B,
      show_profiles = TRUE, show_observations = TRUE, show_rugs = TRUE,
      selected_variables = c("surface","construction.year"))
 
-## ---- warning=FALSE, message=FALSE---------------------------------------
+## ---- fig.width=7, fig.height=6, warning=FALSE, message=FALSE------------
 apartments_C <- select_sample(apartmentsTest, n = 15)
 cp_rf_C <- ceteris_paribus(explainer_rf, apartments_C, y = apartments_C$m2.price)
 
@@ -39,45 +39,45 @@ plot(cp_rf_C,
      show_profiles = FALSE, 
      selected_variables = c("surface","construction.year"))
 
-## ---- warning=FALSE, message=FALSE---------------------------------------
+## ---- fig.width=7, fig.height=6, warning=FALSE, message=FALSE------------
 plot(cp_rf_C, 
      show_profiles = FALSE, show_observations = FALSE, show_rugs = TRUE, 
      selected_variables = c("surface","construction.year"))
 
-## ---- warning=FALSE, message=FALSE---------------------------------------
+## ---- fig.width=7, fig.height=6, warning=FALSE, message=FALSE------------
 plot(cp_rf_C, 
      show_profiles = TRUE, show_observations = FALSE, 
      selected_variables = c("surface","construction.year")) 
 
-## ---- warning=FALSE, message=FALSE---------------------------------------
+## ---- fig.width=7, fig.height=6, warning=FALSE, message=FALSE------------
 plot(cp_rf_C, 
      show_profiles = FALSE, show_observations = FALSE, show_residuals = TRUE, 
      selected_variables = c("surface","construction.year"))
 
-## ---- warning=FALSE, message=FALSE---------------------------------------
+## ---- fig.width=7, fig.height=6, warning=FALSE, message=FALSE------------
 plot(cp_rf_C, 
      show_profiles = TRUE, show_observations = FALSE, 
      aggregate_profiles = mean, size = 2,
      selected_variables = c("surface","construction.year"))
 
-## ---- warning=FALSE, message=FALSE---------------------------------------
+## ---- fig.width=7, fig.height=6, warning=FALSE, message=FALSE------------
 plot(cp_rf_C, 
      show_profiles = TRUE, show_observations = FALSE, 
      color = "district", alpha = 1,
      selected_variables = c("surface","construction.year", "district")) 
 
-## ---- warning=FALSE, message=FALSE---------------------------------------
+## ---- fig.width=7, fig.height=6, warning=FALSE, message=FALSE------------
 plot(cp_rf_C, 
      show_profiles = TRUE, show_observations = TRUE, 
      color = "surface", alpha = 1, 
      selected_variables = c("surface","construction.year"))
 
-## ---- warning=FALSE, message=FALSE---------------------------------------
+## ---- fig.width=7, fig.height=6, warning=FALSE, message=FALSE------------
 plot(cp_rf_C, 
      show_profiles = TRUE, show_observations = TRUE, 
      selected_variables = c("surface","construction.year"))
 
-## ---- warning=FALSE, message=FALSE---------------------------------------
+## ---- fig.width=7, fig.height=6, warning=FALSE, message=FALSE------------
 plot(cp_rf_C, 
      show_profiles = TRUE, show_observations = TRUE, show_rugs = TRUE,
      show_residuals = TRUE, 
@@ -86,7 +86,7 @@ plot(cp_rf_C,
      size_points = 4, size_rugs = 0.5,
      selected_variables = c("surface","construction.year"))
 
-## ---- warning=FALSE, message=FALSE---------------------------------------
+## ---- fig.width=7, fig.height=6, warning=FALSE, message=FALSE------------
 # mixtures
 
 plot(cp_rf_C, 
@@ -98,7 +98,7 @@ plot(cp_rf_C,
             aggregate_profiles = mean, size = 2, alpha = 1,
             selected_variables = c("surface","construction.year")) 
 
-## ---- warning=FALSE, message=FALSE---------------------------------------
+## ---- fig.width=7, fig.height=6, warning=FALSE, message=FALSE------------
 apartments_D <- select_neighbours(apartmentsTest, apartmentsTest[348,], n = 15)
 cp_rf_D <- ceteris_paribus(explainer_rf, apartments_D, y = apartments_D$m2.price)
 
@@ -111,7 +111,7 @@ plot(cp_rf_B,
           color = "orange", color_residuals = "red",
           selected_variables = c("surface","construction.year")) 
 
-## ---- warning=FALSE, message=FALSE---------------------------------------
+## ---- fig.width=7, fig.height=6, warning=FALSE, message=FALSE------------
 library("rpart")
 library("e1071")
 apartments_svm_model <- svm(m2.price ~ construction.year + surface + floor + 
@@ -141,13 +141,13 @@ plot(cp_rf_A,
           selected_variables = c("surface","construction.year"))
 
 
-## ---- warning=FALSE, message=FALSE---------------------------------------
+## ---- fig.width=7, fig.height=6, warning=FALSE, message=FALSE------------
 plot(cp_rf_A, cp_rf_E, cp_rpart_F,
      color = "_label_", 
     selected_variables = c("surface","construction.year"))
 
 
-## ---- warning=FALSE, message=FALSE---------------------------------------
+## ---- fig.width=7, fig.height=6, warning=FALSE, message=FALSE------------
 apartments_A <- apartmentsTest[2,]
 cp_rf_A <- ceteris_paribus(explainer_rf, apartments_A, y = apartments_A$m2.price)
 
@@ -196,7 +196,7 @@ plot(cp_rf_B,
      as.gg = TRUE) + xlab("") +  theme_light() + ylab("price [EUR]")
 
 
-## ---- warning=FALSE, message=FALSE---------------------------------------
+## ---- fig.width=7, fig.height=6, warning=FALSE, message=FALSE------------
 plot(cp_rf_A, cp_rf_E, cp_rpart_F,
      color = "_label_", alpha = 0.5, size_points = 4, 
      selected_variables = "surface", 
@@ -209,7 +209,7 @@ plot(cp_rf_C[as.numeric(cp_rf_C$district) < 8,],
      as.gg = TRUE) + xlab("") + ylab("price [EUR]") + theme_light() 
 
 
-## ---- warning=FALSE, message=FALSE---------------------------------------
+## ---- fig.width=7, fig.height=6, warning=FALSE, message=FALSE------------
 
 plot(cp_rf_A,
      alpha = 0.5, size_points = 4, 

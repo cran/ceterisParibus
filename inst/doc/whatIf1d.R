@@ -15,7 +15,7 @@ explainer_rf <- explain(apartments_rf_model,
 explainer_lm <- explain(apartments_lm_model, 
                         data = apartmentsTest[,2:6], y = apartmentsTest$m2.price)
 
-## ---- fig.width=7, fig.height=7------------------------------------------
+## ---- fig.width=7, fig.height=6------------------------------------------
 new_apartment <- apartmentsTest[1, ]
 new_apartment
 
@@ -32,12 +32,28 @@ plot(wi_lm, split = "variables", color = "variables")
 plot(wi_lm)
 
 
-## ---- fig.width=7, fig.height=7------------------------------------------
+## ---- fig.width=7, fig.height=6------------------------------------------
+cp_rf <- ceteris_paribus(explainer_rf, observation = new_apartment)
+cp_rf
+plot(cp_rf)
+plot(cp_rf, color = "_vname_")
+
+cp_lm <- ceteris_paribus(explainer_lm, observation = new_apartment)
+cp_lm
+plot(cp_lm)
+plot(cp_lm, color = "_vname_")
+
+## ---- fig.width=7, fig.height=6------------------------------------------
 plot(wi_rf, wi_lm, split = "variables", color = "models", quantiles = FALSE)
 plot(wi_rf, wi_lm, split = "variables", color = "models")
 plot(wi_rf, wi_lm)
 
-## ---- fig.width=7, fig.height=7, message=FALSE, warning=FALSE, eval=FALSE----
+## ---- fig.width=7, fig.height=6------------------------------------------
+plot(cp_rf, cp_lm)
+plot(cp_rf, cp_lm, color = "_vname_")
+plot(cp_rf, cp_lm, color = "_label_")
+
+## ---- fig.width=7, fig.height=6, message=FALSE, warning=FALSE, eval=FALSE----
 #  library("ggiraph")
 #  
 #  plot_interactive(wi_rf, split = "variables", color = "variables")
@@ -46,7 +62,7 @@ plot(wi_rf, wi_lm)
 #  plot_interactive(wi_lm, split = "variables", color = "variables")
 #  plot_interactive(wi_lm)
 
-## ---- fig.width=7, fig.height=7, eval=FALSE------------------------------
+## ---- fig.width=7, fig.height=6, eval=FALSE------------------------------
 #  plot_interactive(wi_rf, wi_lm)
 #  plot_interactive(wi_rf, wi_lm, split = "variables")
 

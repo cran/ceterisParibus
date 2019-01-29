@@ -242,6 +242,8 @@ ceteris_paribus_layer <- function(x, ...,
       attr(tmp, "observations")
     })
     all_observations <- do.call(rbind, all_observations)
+    all_observations$`_ids_` <- factor(rownames(all_observations))
+    all_profiles$`_ids_` <- factor(all_profiles$`_ids_`)
 
     # variables to use
     all_variables <- na.omit(as.character(unique(all_profiles$`_vname_`)))
@@ -250,7 +252,7 @@ ceteris_paribus_layer <- function(x, ...,
       if (length(all_variables) == 0) stop(paste0("selected_variables do not overlap with ", paste(all_variables, collapse = ", ")))
     }
     # is color a variable or literal?
-    is_color_a_variable <- color %in% c(all_variables, "_label_", "_vname_")
+    is_color_a_variable <- color %in% c(all_variables, "_label_", "_vname_", "_ids_")
     # only numerical or only factors?
     is_numeric <- sapply(all_profiles[, all_variables, drop = FALSE], is.numeric)
     if (only_numerical) {
@@ -288,17 +290,19 @@ ceteris_paribus_layer <- function(x, ...,
 
     # prepare data for plotting points
     if (show_observations | show_rugs | show_residuals) {
-      is_color_points_a_variable    <- color_points %in% c(all_variables, "_label_", "_vname_")
-      is_color_rugs_a_variable      <- color_rugs %in% c(all_variables, "_label_", "_vname_")
-      is_color_residuals_a_variable <- color_residuals %in% c(all_variables, "_label_", "_vname_")
+      is_color_points_a_variable    <- color_points %in% c(all_variables, "_label_", "_vname_", "_ids_")
+      is_color_rugs_a_variable      <- color_rugs %in% c(all_variables, "_label_", "_vname_", "_ids_")
+      is_color_residuals_a_variable <- color_residuals %in% c(all_variables, "_label_", "_vname_", "_ids_")
 
       tmp <- lapply(vnames, function(var) {
         data.frame(`_x_` = all_observations[,var],
                    `_vname_` = var,
                    `_yhat_`  = all_observations$`_yhat_`,
                    `_y_`     = if (is.null(all_observations$`_y_`)) NA else all_observations$`_y_`,
-                   `_color_` = if (!is_color_points_a_variable) NA else all_observations[,color_points],
-                   0,
+                   `_color_` = if (!is_color_points_a_variable) NA else {
+                     if (color_points == "_vname_") var else all_observations[,color_points]
+                   },
+                   `_ids_`   = all_observations$`_ids_`,
                    `_label_`  = all_observations$`_label_`)
       })
       all_observations_long <- do.call(rbind, tmp)
