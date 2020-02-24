@@ -1,6 +1,6 @@
 Package: ceterisParibus
 Title: Ceteris Paribus Profiles
-Version: 0.3.1
+Version: 0.4.1
 Authors@R: person("Przemyslaw", "Biecek", email = "przemyslaw.biecek@gmail.com", 
     role = c("aut", "cre"),
     comment = c(ORCID = "0000-0001-8423-1823"))
@@ -16,13 +16,12 @@ Imports: DALEX, knitr
 License: GPL-2
 Encoding: UTF-8
 LazyData: true
-VignetteBuilder: knitr
 URL: https://pbiecek.github.io/ceterisParibus/
 BugReports: https://github.com/pbiecek/ceterisParibus/issues
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.2
 NeedsCompilation: no
-Packaged: 2019-01-29 18:41:13 UTC; pbiecek
+Packaged: 2020-02-24 15:49:58 UTC; pbiecek
 Author: Przemyslaw Biecek [aut, cre] (<https://orcid.org/0000-0001-8423-1823>)
 Maintainer: Przemyslaw Biecek <przemyslaw.biecek@gmail.com>
 Repository: CRAN
-Date/Publication: 2019-01-29 23:20:08 UTC
+Date/Publication: 2020-02-24 16:50:29 UTC
