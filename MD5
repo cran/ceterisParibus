@@ -1,6 +1,6 @@
-a9ec2e60d11b7a8a9f286a860a4ccb56 *DESCRIPTION
+1150ad228878da3aa8c6e64ea89c740d *DESCRIPTION
 a0fed1be42afa0d89b0f1534462bc86d *NAMESPACE
-05fb76ee97d744e57e8f4a3fd0e10cae *NEWS.md
+ff8094709ff6a1c9f3b6f320228f6520 *NEWS.md
 9b3ee8752b2322bc821257c6f83c7134 *R/calculate_oscillations.R
 0a86cd06e85c89d13263218242fc3483 *R/calculate_profiles.R
 e35ddc7fc97f13109eb7714ea049124c *R/calculate_profiles_lce.R
@@ -50,7 +50,7 @@ b179b269c86ccefa8d12e41488932606 *man/print.what_if_explainer.Rd
 4ce1c074214a3b5aa508cd2ab29cd9ec *man/what_if_2d.Rd
 4da03542227fc7a440163d536daf3b41 *tests/testthat.R
 7610273091230683eb6044fbd4c28f8c *tests/testthat/helper-objects.R
-c7d319451b827d5070c4229cdfd35ef8 *tests/testthat/test_ceteris_paribus.R
+cbf0b704b5e5fb8b88658e8cab6a2730 *tests/testthat/test_ceteris_paribus.R
 903f090fb5f6dc90ce67873595286f8d *tests/testthat/test_local_conditional_expectations.R
 d69a9b99757e8a0396fc4ca30bf41ffe *tests/testthat/test_local_fit.R
 7ff3d4d5f0532c68d25f720b09309a40 *tests/testthat/test_plot_interactive_what_if.R
