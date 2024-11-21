@@ -1,3 +1,17 @@
+ceterisParibus 0.6
+----------------------------------------------------------------
+
+* Major refactoring of the code: `what_if()` and `local_fit()` functions are	remainders from version 0.2 and they will be deprecated in version 0.4 and removed in 0.6. 
+* From version 0.3 the recommended way to create explainers is through the function `ceteris_paribus()`.
+
+Please note, that `plot_interactive()` function will be deprecated in version 0.4.
+It will not be avaliable in version 1.0. 
+
+ceterisParibus 0.4.3
+----------------------------------------------------------------
+
+* Now in the `ceteris_paribus` function one can specify how grid points shall be calculated, see `variable_splits_type`
+
 ceterisParibus 0.4.2
 ----------------------------------------------------------------
 
@@ -19,12 +33,3 @@ ceterisParibus 0.3
 * The `ceteris_paribus()` function now covers a very flexible grammar for visual exploration of black box models. See https://pbiecek.github.io/DALEX_docs/5-ceterisParibus.html#ceterisParibus for more details.
 * The `ceteris_paribus()` function from ver 0.2 is now avaliable as `what_if()`. Here is where the development of older version will take place.
 
-Major refactoring of the code
-----------------------------------------------------------------
-
-Please note, that `what_if()` and `local_fit()` functions are	remainders from version 0.2 and they will be deprecated in version 0.4. 
-They will not be avaliable in version 1.0. 
-From version 0.3 the recommended way to create explainers is through the function `ceteris_paribus()`.
-
-Please note, that `plot_interactive()` function will be deprecated in version 0.4.
-It will not be avaliable in version 1.0. 

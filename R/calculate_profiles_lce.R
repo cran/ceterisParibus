@@ -36,6 +36,7 @@
 calculate_profiles_lce <- function(data, variable_splits, model, dataset, predict_function = predict, ...) {
   UseMethod("calculate_profiles_lce")
 }
+#' @export
 calculate_profiles_lce.default <- function(data, variable_splits, model, dataset, predict_function = predict, ...) {
   variables <- names(variable_splits)
   profiles <- lapply(variables, function(variable) {

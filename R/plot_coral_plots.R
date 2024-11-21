@@ -105,7 +105,7 @@ theme_wangkardu <- function(selected_palette) {
         panel.grid.major.y = element_line(linetype = "dotted", colour = selected_palette$medium),
         legend.position = "none",
         plot.background = element_rect(fill = selected_palette$background, colour = selected_palette$background,
-                                       size = 0.8, linetype = "dotted"),
+                                       linewidth = 0.8, linetype = "dotted"),
         strip.background = element_rect(fill = selected_palette$background),
         strip.text = element_text(family = "sans", color = selected_palette$medium))
 }

@@ -22,7 +22,7 @@ select_neighbours(
 
 \item{distance}{distance function, by default the `gower_dist` function.}
 
-\item{n}{number of neighbours to select}
+\item{n}{number of neighbors to select}
 
 \item{frac}{if `n` is not specified (NULL), then will be calculated as `frac` * number of rows in `data`. Either `n` or `frac` need to be specified.}
 }
@@ -31,7 +31,7 @@ a data frame with selected rows
 }
 \description{
 This function selects subset of rows from data set.
-This is usefull if data is large and we need just a sample to calculate profiles.
+This is useful if data is large and we need just a sample to calculate profiles.
 }
 \details{
 Note that \code{select_neighbours} function is S3 generic.

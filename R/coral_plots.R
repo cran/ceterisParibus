@@ -2,9 +2,9 @@
 #'
 #' @param explainer a model to be explained, preprocessed by the 'DALEX::explain' function
 #' @param selected_variable variable to be presented in the local fit plot
-#' @param observation a new observarvation for which predictions need to be explained
+#' @param observation a new observation for which predictions need to be explained
 #' @param grid_points number of points used for response path
-#' @param select_points fraction of points fromvalidation data to be presented in local fit plots
+#' @param select_points fraction of points from validation data to be presented in local fit plots
 #'
 #' @return An object of the class 'local_fit_explainer'.
 #' It's a data frame with calculated average responses.

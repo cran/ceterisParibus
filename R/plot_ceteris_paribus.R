@@ -375,7 +375,7 @@ ceteris_paribus_layer <- function(x, ...,
   }
 
   class(e1) <- class(e1)[-1]
-  if (class(e2) == "function") { # working as plot_ceteris_paribus_explainer
+  if (inherits(e2, "function")) { # working as plot_ceteris_paribus_explainer
     tmp <- e2(e1)
   } else { # should act as a +.gg
     tmp <- e1 + e2
